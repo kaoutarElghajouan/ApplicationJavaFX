@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="342.0" prefWidth="699.0" style="-fx-background-color: LIGHTGREY;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerNvProbleme">
+   <children>
+      <Button  layoutX="350.0" layoutY="286.0" mnemonicParsing="false" onAction="#choixversinitiale" prefHeight="25.0" prefWidth="47.0" text="Ok" />
+      
+      <CheckBox onMouseClicked="#verrouiller" fx:id="system" layoutX="98.0" layoutY="101.0" mnemonicParsing="false" style="-fx-font-weight: bold;" text="Système" textFill="#1945e8" onAction="#handleSystem"/>
+      <CheckBox fx:id="utilisateur" layoutX="98.0" layoutY="203.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="89.0" style="-fx-font-weight: bold;" text="Utilisateur" textFill="#0938e1" onAction="#handleUtilisateur"/>
+      <ImageView fitHeight="67.0" fitWidth="66.0" layoutX="227.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/utilisateur.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="302.0" layoutY="199.0" prefHeight="26.0" prefWidth="283.0" style="-fx-font-weight: bold;" text="L'utilisateur rentre les deux nombres ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox disable="true" fx:id="choix"  layoutX="274.0" layoutY="93.0" prefHeight="33.0" prefWidth="283.0" promptText="Probléme arbitraire">
+		       <items>
+		        <FXCollections fx:factory="observableArrayList">
+		            <String fx:value="Problème arbitraire" />
+		            <String fx:value="Probléme sans emprunt" />
+		            <String fx:value="Probléme avec un seul emprunt" />
+		            <String fx:value="Probléme avec deux emprunt" />
+		            <String fx:value="Probléme avec un zéro en haut" />
+		            <String fx:value="Probléme avec des zéros en haut" />
+		            <String fx:value="Probléme avec un zéro en bas" />
+		            <String fx:value="Probléme avec des zéros en bas" />
+		        </FXCollections>
+		    </items>
+     </ComboBox>
+   </children>
+</AnchorPane>

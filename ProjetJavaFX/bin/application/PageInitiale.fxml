@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="568.0" prefWidth="1100.0" style="-fx-background-color: CORNSILK;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Line endY="180.0" startX="551.5" startY="180.0" stroke="#b2326a" />
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1107.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Fichier">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Exemple">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Exemples sans emprunt et avec emprunt" />
+                  <MenuItem mnemonicParsing="false" text="Exemples avec des zeros" />
+                  <MenuItem mnemonicParsing="false" text="Exemples avec des vides" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Information">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Manuel d'utilisation du système" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Exécution">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Résolution">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#AffichageSystem" text="Solution du système" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Aide">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Aide" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="quitter" onAction="#Quitter" layoutY="27.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="114.0" text="Quitter" />
+      <Button layoutX="115.0" layoutY="27.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="114.0" text="Aide" />
+      <Label layoutX="4.0" layoutY="118.0" text="Etape 1 : Commencer un nouveau problème">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Button layoutX="357.0" layoutY="106.0" mnemonicParsing="false" onMouseClicked="#NouveauProbleme" prefHeight="56.0" prefWidth="205.0" text="Nouveau Problème ">
+         <graphic>
+            <ImageView fitHeight="44.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/calculatrice.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="3.0" layoutY="195.0" text="Etape 2 : Effectuer votre oprération">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="1.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/quitter.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="44.0" layoutX="115.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/aide.png" />
+         </image>
+      </ImageView>
+      <Line endX="-8.0" endY="180.0" layoutX="8.0" layoutY="251.0" startX="537.5" startY="180.0" stroke="#b2326a" />
+      <Label layoutX="306.0" layoutY="274.0" text="Nombre du haut" />
+      <Label layoutX="309.0" layoutY="316.0" text="Nombre du bas" />
+      <Label layoutX="354.0" layoutY="290.0" prefHeight="17.0" prefWidth="0.0" text="-" />
+      <Label layoutX="329.0" layoutY="373.0" text="Résultat" />
+      <TextField fx:id="nbrhaut3" layoutX="408.0" layoutY="270.0" onKeyReleased="#handle3" onMouseClicked="#clicked2" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: yellow;" />
+      <TextField fx:id="nbrhaut2" layoutX="440.0" layoutY="270.0" onKeyReleased="#handle2" onMouseClicked="#clicked1" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: yellow;" />
+      <TextField fx:id="nbrhaut1" layoutX="472.0" layoutY="270.0" onKeyReleased="#handle1" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: yellow;" />
+      <TextField fx:id="nbrbas3" layoutX="408.0" layoutY="312.0" onKeyReleased="#handle6" onMouseClicked="#clicked4" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: yellow;" />
+      <TextField fx:id="nbrbas2" layoutX="440.0" layoutY="312.0" onKeyReleased="#handle5" onMouseClicked="#clicked3" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: yellow;" />
+      <TextField fx:id="nbrbas1" layoutX="472.0" layoutY="312.0" onKeyReleased="#handle4" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: yellow;" />
+      <TextField fx:id="resultat3" layoutX="408.0" layoutY="369.0" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: yellow;" />
+      <TextField fx:id="resultat2" layoutX="440.0" layoutY="369.0" onKeyReleased="#handle8" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: yellow;" />
+      <TextField fx:id="resultat1" layoutX="472.0" layoutY="369.0" onKeyReleased="#handle7" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: yellow;" />
+      <Line endX="309.5" endY="180.0" layoutX="89.0" layoutY="173.0" startX="433.5" startY="180.0" stroke="#b2326a" />
+      <TextField fx:id="empreintL2" layoutX="408.0" layoutY="233.0" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: LIGHTYELLOW;" />
+      <TextField fx:id="empreintL1" layoutX="440.0" layoutY="233.0" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: LIGHTYELLOW;" />
+      <TextField fx:id="empreintB2" layoutX="440.0" layoutY="196.0" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: LIGHTSKYBLUE;" />
+      <TextField fx:id="empreintB1" layoutX="472.0" layoutY="196.0" prefHeight="25.0" prefWidth="32.0" style="-fx-border-color: gray; -fx-background-color: LIGHTSKYBLUE;" />
+      <Label layoutX="7.0" layoutY="449.0" prefHeight="32.0" prefWidth="255.0" text="Etape 3 : Faire le diagnostique">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Button layoutX="392.0" layoutY="447.0" mnemonicParsing="false" onMouseClicked="#ResultatSoustraction" prefHeight="42.0" prefWidth="104.0" text="Valider" />
+      <Label fx:id="LblAffichage" layoutX="593.0" layoutY="51.0" prefHeight="492.0" prefWidth="468.0" style="-fx-background-color: LIGHTGRAY;" />
+   </children>
+</AnchorPane>
